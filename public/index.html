@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <style type="text/css">
+    ul li{
+      list-style-type: none; 
+    }
+
+    #twitter-div ul li{
+      padding-bottom:40px; 
+    }
+    </style>
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.2.2/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+    <script src="js/merged.js"></script>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" style="text-align: center">
+      <form id="search_form" action="" method="POST">
+      <h2>Search Twitter and Flickr for</h2>
+      <input autocomplete="off" autofocus="true" type="text" name="q" id="q" value="" />
+      <input type="submit" id="button" value="Go" />
+  </form>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span6">
+          <h2>Flickr Results</h2>
+          <div id ="flickr-div">
+            <ul id="flickrs">
+            </ul>
+
+
+
+            <script type="text/template" id="flickr_template">
+            
+              <li>
+              <!--
+              author: <%= author %><br />
+              author_id: <%= author_id %><br />
+              date_taken: <%= date_taken %><br />
+              -->
+              <%= description %><br />
+              <!--
+              link: <%= link %><br />
+              media: <%= media %><br />
+              published: <%= published %><br />
+              tags: <%= tags %><br />
+              title: <%= title %><br />
+              -->
+              </li>
+
+            </script>
+          </div>
+        </div>
+        <div class="span6">
+          <h2>Twitter Results</h2>
+          <div id ="twitter-div">
+            <ul id="tweets">
+            </ul>
+            <script type="text/template" id="tweet_template">
+              <li id="t_<%= id %>">
+                <h3>
+                  <img src="<%= profile_image_url %>" alt="<%= from_user %>" width="45" />
+                  <div>
+                    <a href="http://twitter.com/<%= from_user %>" title="<%= from_user %>">@<%= from_user %></a> at 
+                    <span class="date"><%= Date.parse(created_at).add(-5).hours().toString("h:mmtt").toLowerCase() %></span>:
+                  </div>
+                </h3>
+                <p><%= text %>
+              </li>
+            </script>
+          </div>
+       </div>
+      </div>
+
+      <hr>
+
+      <footer>
+     
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
